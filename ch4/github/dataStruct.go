@@ -2,20 +2,20 @@ package github
 
 import "time"
 
-const IssuesURL = "https://api.github.com/search/issues"
+const IssuesURL = "https://api.github.com/search/code"
 
 type IssuesSearchResult struct {
-	TotalCount int `json:"total_count"`
-	Items []*Issues
+	TotalCount int
+	Iterms []*Issue
 }
 
-type Issues struct {
+type Issue struct {
 	Number int
 	HTMLURL string `json:"html_url"`
 	Title string
 	State string
 	User *User
-	CreateAt time.Time `json:"created_at"`
+	CreatedAt time.Time `json:"created_at"`
 	Body string
 }
 
