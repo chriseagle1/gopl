@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func SearchIssues(terms []string) (*IssuesSearchResult, error)  {
+func SearchIssues1(terms []string) (*IssuesSearchResult, error)  {
 	q := url.QueryEscape(strings.Join(terms, " "))
 
 	resp, err := http.Get(IssuesURL + "?q=" + q)
